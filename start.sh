@@ -3,6 +3,7 @@
 set -e
 
 if [ ! -f mc.jar ]; then
+  echo "Downloading Minecraft Version $Version"
   wget -O mc.jar "https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/minecraft_server.${VERSION}.jar"
 fi
 
