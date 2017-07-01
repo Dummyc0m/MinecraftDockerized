@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  minecraft:
+    build: .
+    image: dummyc0m/minecraft
+    ports:
+      - "25565:25565"
+    environment:
+      - JAVA_OPTS=-d64 -server -Xmx1024M -Xms1024M -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=2 -XX:+AggressiveOpts
+      - VERSION=1.12
+    volumes:
+      - ./volumes/data:/data
